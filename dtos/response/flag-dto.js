@@ -1,6 +1,6 @@
 /**
  * @typedef FlagDto
- * @property {boolean} flag.required
+ * @property {boolean} flag
  */
 class FlagDto {
     flag;

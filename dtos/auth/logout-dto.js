@@ -1,8 +1,8 @@
 /**
  * @typedef LogoutDto
- * @property {string} access_token.required
- * @property {string} refresh_token.required
- * @property {number} type_auth.required
+ * @property {string} access_token
+ * @property {string} refresh_token
+ * @property {number} type_auth
  */
 class LogoutDto {
     access_token;

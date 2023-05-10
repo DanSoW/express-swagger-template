@@ -20,7 +20,6 @@
  * Выход пользователя из системы
  * @route POST /auth/logout
  * @group Авторизация (пользователь) - Функции для авторизации пользователя
- * @param {LogoutDto.model} input.body.required Входные данные
  * @returns {SuccessDto.model} 200 - Флаг, определяющий успех операции выхода пользователя из системы
  * @returns {ApiError.model} default - Ошибка запроса
  */

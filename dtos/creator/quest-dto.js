@@ -1,10 +1,10 @@
 /**
  * @typedef QuestDto
- * @property {string} task.required
- * @property {string} hint.required
- * @property {number} radius.required
- * @property {string} ref_media.required
- * @property {number} marks_id.required
+ * @property {string} task
+ * @property {string} hint
+ * @property {number} radius
+ * @property {string} ref_media
+ * @property {number} marks_id
  */
 class QuestDto {
     task;

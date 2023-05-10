@@ -69,13 +69,6 @@
                   $ref: "#/components/schemas/ApiError"
     /auth/logout: 
       post: 
-        requestBody: 
-          content: 
-            application/json: 
-              schema: 
-                $ref: "#/components/schemas/LogoutDto"
-          description: "Входные данные"
-          required: true
         description: "Выход пользователя из системы"
         tags: 
           - "Авторизация (пользователь)"
@@ -341,18 +334,11 @@
         description: ""
     schemas: 
       ActivationLinkDto: 
-        required: 
-          - "activation_link"
         properties: 
           activation_link: 
             type: "string"
             description: ""
       AttributeDto: 
-        required: 
-          - "read"
-          - "write"
-          - "update"
-          - "delete"
         properties: 
           read: 
             type: "boolean"
@@ -367,23 +353,15 @@
             type: "boolean"
             description: ""
       AuthDto: 
-        required: 
-          - "access_token"
-          - "refresh_token"
-          - "attributes"
         properties: 
-          access_token: 
+          access_token-null: 
             type: "string"
             description: "Токен доступа"
           refresh_token: 
             $ref: "#/components/schemas/ModuleDto"
-          attributes: 
+          attributes-null: 
             $ref: "#/components/schemas/AttributeDto"
       LogoutDto: 
-        required: 
-          - "access_token"
-          - "refresh_token"
-          - "type_auth"
         properties: 
           access_token: 
             type: "string"
@@ -395,14 +373,6 @@
             type: "number"
             description: ""
       ModuleDto: 
-        required: 
-          - "player"
-          - "judge"
-          - "creator"
-          - "moderator"
-          - "manager"
-          - "admin"
-          - "super_admin"
         properties: 
           player: 
             type: "boolean"
@@ -483,9 +453,6 @@
             type: "string"
             description: ""
       TokenDto: 
-        required: 
-          - "access_token"
-          - "refresh_token"
         properties: 
           access_token: 
             type: "string"
@@ -545,23 +512,6 @@
             type: "number"
             description: "Идентификатор игры"
       GamesCreatedDto: 
-        required: 
-          - "id"
-          - "name"
-          - "max_count_commands"
-          - "date_begin"
-          - "date_end"
-          - "age_limit"
-          - "type"
-          - "rating"
-          - "min_score"
-          - "location"
-          - "created_at"
-          - "updated_at"
-          - "count_points"
-          - "warnings"
-          - "bans"
-          - "accepted"
         properties: 
           id: 
             type: "number"
@@ -593,13 +543,13 @@
           location: 
             type: "string"
             description: "местоположение задания"
-          created_at: 
+          created_at-null: 
             type: "string"
             description: "дата создания задания в формате ISO 8601"
           updated_at: 
             type: "string"
             description: "дата последнего обновления задания в формате ISO 8601"
-          count_points: 
+          count_points-null: 
             type: "number"
             description: "количество баллов за прохождение задания"
           warnings: 
@@ -614,12 +564,6 @@
             type: "boolean"
             description: "флаг, указывающий на принятие задания"
       QuestDto: 
-        required: 
-          - "task"
-          - "hint"
-          - "radius"
-          - "ref_media"
-          - "marks_id"
         properties: 
           task: 
             type: "string"
@@ -637,23 +581,16 @@
             type: "number"
             description: ""
       FlagDto: 
-        required: 
-          - "flag"
         properties: 
           flag: 
             type: "boolean"
             description: ""
       SuccessDto: 
-        required: 
-          - "success"
         properties: 
           success: 
             type: "boolean"
             description: ""
       ApiError: 
-        required: 
-          - "message"
-          - "errors"
         properties: 
           message: 
             type: "string"
@@ -663,12 +600,6 @@
             items: 
               $ref: "#/components/schemas/FieldError"
       FieldError: 
-        required: 
-          - "type"
-          - "value"
-          - "msg"
-          - "path"
-          - "location"
         properties: 
           type: 
             type: "string"
