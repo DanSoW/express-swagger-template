@@ -1,12 +1,12 @@
 /**
  * @typedef ModuleDto
- * @property {boolean} player
- * @property {boolean} judge
- * @property {boolean} creator
- * @property {boolean} moderator
- * @property {boolean} manager
- * @property {boolean} admin
- * @property {boolean} super_admin
+ * @property {boolean} player.required
+ * @property {boolean} judge.required
+ * @property {boolean} creator.required
+ * @property {boolean} moderator.required
+ * @property {boolean} manager.required
+ * @property {boolean} admin.required
+ * @property {boolean} super_admin.required
  */
 class ModuleDto {
     player;

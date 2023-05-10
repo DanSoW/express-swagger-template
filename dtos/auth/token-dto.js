@@ -1,7 +1,7 @@
 /**
  * @typedef TokenDto
- * @property {string} access_token
- * @property {string} refresh_token
+ * @property {string} access_token.required
+ * @property {string} refresh_token.required
  */
 class TokenDto {
     access_token;

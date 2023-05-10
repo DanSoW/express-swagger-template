@@ -42,7 +42,7 @@
             description: "Авторизационные данные пользователя"
             schema: 
               $ref: "#/definitions/AuthDto"
-          300, 400, 401, 403, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -64,7 +64,7 @@
             description: "Авторизационные данные пользователя"
             schema: 
               $ref: "#/definitions/AuthDto"
-          300, 401, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -76,7 +76,8 @@
             in: "body"
             description: "Входные данные"
             required: true
-            type: "LogoutDto"
+            schema: 
+              $ref: "#/definitions/LogoutDto"
         description: "Выход пользователя из системы"
         tags: 
           - "Авторизация (пользователь)"
@@ -85,7 +86,7 @@
             description: "Флаг, определяющий успех операции выхода пользователя из системы"
             schema: 
               $ref: "#/definitions/SuccessDto"
-          300, 401, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -107,7 +108,7 @@
             description: "Авторизационные данные пользователя"
             schema: 
               $ref: "#/definitions/AuthDto"
-          300, 401, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -122,7 +123,7 @@
             description: "Флаг, определяющий успех операции выхода пользователя из системы"
             schema: 
               $ref: "#/definitions/SuccessDto"
-          300, 401, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -144,7 +145,7 @@
             description: "Флаг, определяющий успех операции подтверждения пользователя"
             schema: 
               $ref: "#/definitions/SuccessDto"
-          300, 401, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -159,7 +160,7 @@
             description: "Авторизационные данные пользователя"
             schema: 
               $ref: "#/definitions/AuthDto"
-          300, 401, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -181,7 +182,7 @@
             description: "Выходные данные"
             schema: 
               $ref: "#/definitions/GameCreateDto"
-          300, 401, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -202,7 +203,7 @@
               type: "array"
               items: 
                 $ref: "#/definitions/GamesCreatedDto"
-          300, 401, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -230,7 +231,7 @@
               type: "array"
               items: 
                 $ref: "#/definitions/GamesCreatedDto"
-          300, 401, 404, 500: 
+          default: 
             description: "Ошибка запроса"
             schema: 
               $ref: "#/definitions/ApiError"
@@ -240,13 +241,18 @@
             JWT: []
   definitions: 
     ActivationLinkDto: 
-      required: []
+      required: 
+        - "activation_link"
       properties: 
         activation_link: 
           type: "string"
           description: ""
     AttributeDto: 
-      required: []
+      required: 
+        - "read"
+        - "write"
+        - "update"
+        - "delete"
       properties: 
         read: 
           type: "boolean"
@@ -261,7 +267,10 @@
           type: "boolean"
           description: ""
     AuthDto: 
-      required: []
+      required: 
+        - "access_token"
+        - "refresh_token"
+        - "attributes"
       properties: 
         access_token: 
           type: "string"
@@ -286,7 +295,14 @@
           type: "number"
           description: ""
     ModuleDto: 
-      required: []
+      required: 
+        - "player"
+        - "judge"
+        - "creator"
+        - "moderator"
+        - "manager"
+        - "admin"
+        - "super_admin"
       properties: 
         player: 
           type: "boolean"
@@ -367,7 +383,9 @@
           type: "string"
           description: ""
     TokenDto: 
-      required: []
+      required: 
+        - "access_token"
+        - "refresh_token"
       properties: 
         access_token: 
           type: "string"
@@ -420,7 +438,8 @@
           items: 
             $ref: "#/definitions/QuestDto"
     GameDeleteDto: 
-      required: []
+      required: 
+        - "info_games_id"
       properties: 
         info_games_id: 
           type: "number"
@@ -440,6 +459,8 @@
         - "created_at"
         - "updated_at"
         - "count_points"
+        - "warnings"
+        - "bans"
         - "accepted"
       properties: 
         id: 
@@ -514,19 +535,23 @@
           type: "number"
           description: ""
     FlagDto: 
-      required: []
+      required: 
+        - "flag"
       properties: 
         flag: 
           type: "boolean"
           description: ""
     SuccessDto: 
-      required: []
+      required: 
+        - "success"
       properties: 
         success: 
           type: "boolean"
           description: ""
     ApiError: 
-      required: []
+      required: 
+        - "message"
+        - "errors"
       properties: 
         message: 
           type: "string"
@@ -536,7 +561,12 @@
           items: 
             $ref: "#/definitions/FieldError"
     FieldError: 
-      required: []
+      required: 
+        - "type"
+        - "value"
+        - "msg"
+        - "path"
+        - "location"
       properties: 
         type: 
           type: "string"

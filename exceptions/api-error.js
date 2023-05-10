@@ -2,8 +2,8 @@ import FieldError from "./field-error.js";
 
 /**
  * @typedef ApiError
- * @property {string} message
- * @property {Array.<FieldError>} errors
+ * @property {string} message.required
+ * @property {Array.<FieldError>} errors.required
  */
 class ApiError extends Error {
     status;

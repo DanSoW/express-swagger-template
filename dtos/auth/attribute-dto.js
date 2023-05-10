@@ -1,9 +1,9 @@
 /**
  * @typedef AttributeDto
- * @property {boolean} read
- * @property {boolean} write
- * @property {boolean} update
- * @property {boolean} delete
+ * @property {boolean} read.required
+ * @property {boolean} write.required
+ * @property {boolean} update.required
+ * @property {boolean} delete.required
  */
 class AttributeDto {
     read;

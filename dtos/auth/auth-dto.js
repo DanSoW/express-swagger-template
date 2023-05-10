@@ -4,9 +4,9 @@ import AttributeDto from "./attribute-dto.js";
 
 /**
  * @typedef AuthDto
- * @property {string} access_token - Токен доступа
- * @property {ModuleDto.model} refresh_token - Доступные модули
- * @property {AttributeDto.model} attributes - Атрибуты пользователя
+ * @property {string} access_token.required - Токен доступа
+ * @property {ModuleDto.model} refresh_token.required - Доступные модули
+ * @property {AttributeDto.model} attributes.required - Атрибуты пользователя
  */
 class AuthDto {
     access_token;

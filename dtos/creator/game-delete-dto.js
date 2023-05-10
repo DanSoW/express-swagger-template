@@ -1,7 +1,7 @@
 
 /**
  * @typedef GameDeleteDto
- * @property {number} info_games_id - Идентификатор игры
+ * @property {number} info_games_id.required - Идентификатор игры
  */
 class GameDeleteDto {
     users_id;

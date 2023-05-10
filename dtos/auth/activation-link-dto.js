@@ -1,6 +1,6 @@
 /**
  * @typedef ActivationLinkDto
- * @property {string} activation_link
+ * @property {string} activation_link.required
  */
 class ActivationLinkDto {
     activation_link;

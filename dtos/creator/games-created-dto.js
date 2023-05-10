@@ -13,8 +13,8 @@
 * @property {string} created_at.required - дата создания задания в формате ISO 8601
 * @property {string} updated_at.required - дата последнего обновления задания в формате ISO 8601
 * @property {number} count_points.required - количество баллов за прохождение задания
-* @property {array} warnings - массив предупреждений
-* @property {array} bans - массив запретов
+* @property {array} warnings.required - массив предупреждений
+* @property {array} bans.required - массив запретов
 * @property {boolean} accepted.required - флаг, указывающий на принятие задания
  */
 class GamesCreatedDto {

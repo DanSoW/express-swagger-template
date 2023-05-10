@@ -1,6 +1,6 @@
 /**
  * @typedef SuccessDto
- * @property {boolean} success
+ * @property {boolean} success.required
  */
 class SuccessDto {
     success;

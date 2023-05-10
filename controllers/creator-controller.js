@@ -5,7 +5,7 @@
  * @operationId creatorGameCreate
  * @param {GameCreateDto.model} input.body.required Входные данные
  * @returns {GameCreateDto.model} 200 - Выходные данные
- * @returns {ApiError.model} 300, 401, 404, 500 - Ошибка запроса
+ * @returns {ApiError.model} default - Ошибка запроса
  * @security JWT
  */
 
@@ -15,7 +15,7 @@
  * @group Создатель (контент менеджер) - Функции для наполнения контентом
  * @operationId creatorGamesCreated
  * @returns {Array.<GamesCreatedDto>} 200 - Выходные данные
- * @returns {ApiError.model} 300, 401, 404, 500 - Ошибка запроса
+ * @returns {ApiError.model} default - Ошибка запроса
  * @security JWT
  */
 
@@ -26,6 +26,6 @@
  * @operationId creatorGameDelete
  * @param {GameDeleteDto.model} input.body.required Входные данные
  * @returns {Array.<GamesCreatedDto>} 200 - Выходные данные
- * @returns {ApiError.model} 300, 401, 404, 500 - Ошибка запроса
+ * @returns {ApiError.model} default - Ошибка запроса
  * @security JWT
  */

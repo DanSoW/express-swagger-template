@@ -1,10 +1,10 @@
 /**
  * @typedef FieldError
- * @property {string} type
- * @property {string} value
- * @property {string} msg
- * @property {string} path
- * @property {string} location
+ * @property {string} type.required
+ * @property {string} value.required
+ * @property {string} msg.required
+ * @property {string} path.required
+ * @property {string} location.required
  */
 class FieldError {
     type;
